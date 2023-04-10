@@ -1,0 +1,22 @@
+.main-color {
+  color: $main-color;
+}
+.section-color {
+  background-color: $section-color;
+}
+.w-fit {
+  width: fit-content;
+}
+.min-h-article {
+  min-height: 140px;
+}
+.bg-title {
+  background-color: $main-color;
+  border-right: 4px solid $main-color-dark;
+  color: $white;
+  font-size: 17px;
+  height: 45px;
+  line-height: 45px;
+  margin: 0 auto 10px;
+  padding: 0 15px;
+}

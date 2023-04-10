@@ -1,0 +1,276 @@
+.landing {
+  .landingSwiper {
+    .swiper-slide {
+      height: calc(100vh - 43px - 108px - 54.5px - 1.5rem);
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .img {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        object-fit: cover;
+        left: 0;
+        top: 0;
+        height: 100%;
+      }
+      .text {
+        font-size: 24px;
+        color: $white;
+        font-weight: bold;
+        background-color: $black;
+        width: fit-content;
+        padding: 0.5rem 1rem;
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: $white !important;
+      &::after {
+        font-size: 35px !important;
+      }
+    }
+    .swiper-pagination-bullet {
+      width: 11px !important;
+      height: 11px !important;
+      background-color: $white !important;
+      opacity: 1 !important;
+      &.swiper-pagination-bullet-active {
+        background-color: $main-color !important;
+      }
+    }
+  }
+}
+
+.about {
+  .img {
+    width: 100%;
+    height: auto;
+  }
+  .title {
+    font-size: 24px;
+    color: $black;
+    margin-bottom: 0.7rem;
+    font-weight: bold;
+  }
+  .text {
+    font-size: 14px;
+    line-height: 27px;
+    margin: 0;
+    color: $text-color;
+  }
+}
+
+.news {
+  .title {
+    font-size: 24px;
+    color: $black;
+    margin: 0 auto 1.5rem;
+    font-weight: bold;
+    width: fit-content;
+    position: relative;
+    &::after {
+      content: "";
+      background-color: $main-color;
+      width: calc(100% + 12rem);
+      position: absolute;
+      height: 2px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    .text {
+      z-index: 2;
+      position: relative;
+      background-color: $section-color;
+    }
+  }
+}
+
+.events {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  & > .layers-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.village-flags {
+  .card {
+    background-color: $white;
+    border: 0 !important;
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+    .card-img-top {
+      border-radius: 0 !important;
+      -webkit-border-radius: 0 !important;
+      -moz-border-radius: 0 !important;
+      -ms-border-radius: 0 !important;
+      -o-border-radius: 0 !important;
+      height: 225px !important;
+    }
+    .card-body {
+      border-radius: 0 !important;
+      -webkit-border-radius: 0 !important;
+      text-align: center;
+      -moz-border-radius: 0 !important;
+      -ms-border-radius: 0 !important;
+      -o-border-radius: 0 !important;
+      .card-title {
+        font-size: 16px;
+        margin-bottom: 0.2rem;
+        color: #000000;
+        font-weight: bold;
+      }
+      .info {
+        font-size: 15px;
+        margin: 0;
+        color: $main-color;
+      }
+    }
+  }
+}
+
+.poll {
+  .box {
+    border-radius: 8px;
+    height: 100%;
+    background-color: #d4b24e;
+    padding: 1rem 0;
+    color: white;
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      position: relative;
+      margin-bottom: 2rem;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $white;
+        left: 0;
+        top: 50%;
+        position: absolute;
+        z-index: 1;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+      }
+      .text {
+        width: fit-content;
+        z-index: 2;
+        position: relative;
+        background-color: #d4b24e;
+        padding-right: 1rem;
+      }
+    }
+    .content-box {
+      padding: 0 1rem;
+      .text-box {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .list {
+        line-height: 24px;
+        font-size: 14px;
+        margin-bottom: 2rem;
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+      .list-btn {
+        .btn {
+          border-radius: 8px;
+          padding: 0.4rem 2rem;
+          font-size: 14px !important;
+          color: white !important;
+          &.btn-one {
+            background-color: #3f2102;
+            border:1px solid #3f2102;
+          }
+          &.btn-two {
+            background-color: #4d0404;
+            border:1px solid #4d0404;
+          }
+        }
+      }
+      .img {
+        width: 100%;
+        border-radius: 23px;
+        height: auto;
+      }
+    }
+    &.box-two {
+      background-color: #aea276;
+      .title {
+        .text {
+          background-color: #aea276;
+        }
+      }
+      .btn {
+        background-color: white;
+        color: #000000;
+        width: fit-content;
+        font-size: 14px !important;
+        border: 1px solid wheat !important;
+        display: block;
+        margin-right: auto;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+}
+    }
+  }
+}
+
+.media {
+  .video {
+    filter: drop-shadow(0px 5px 7px rgba(0,0,0,0.35));
+    width: 100%;
+    height: 250px;
+    background-color: #171130;
+}
+.img {
+  width: 100%;
+  height: 177px;
+}
+}
+
+.contact {
+  .form-control {
+    padding: 10px 12px !important;
+    font-size: 14px !important;
+    border: 0 !important;
+    outline: 0 !important;
+    border-radius: 4px !important;
+    filter: drop-shadow(1px 1.732px 0px rgba(184,200,209,0.05)) !important;
+    background-color: #ffffff !important;
+    -webkit-filter: drop-shadow(1px 1.732px 0px rgba(184,200,209,0.05)) !important;
+    &::placeholder {
+      color: black !important;
+    }
+}
+}

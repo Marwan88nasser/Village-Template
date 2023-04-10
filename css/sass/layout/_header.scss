@@ -1,0 +1,209 @@
+.top-nav {
+  background-color: $section-color;
+  border-radius: 0 0 3px 3px;
+  padding: 0.5rem 0;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  .list-social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-end;
+    a {
+      font-size: 18px;
+      color: $main-color;
+    }
+  }
+}
+
+.mid-nav {
+  padding: 1rem 0;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo {
+    display: block;
+    width: 210px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .ads {
+    display: block;
+    width: 70%;
+    height: 76px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    img {
+      height: auto;
+      z-index: -1;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      height: 100%;
+    }
+    .text {
+      font-size: 24px;
+      color: $white;
+      font-weight: bold;
+      text-align: center;
+      filter: drop-shadow(2px 2px 0px #000000)
+        drop-shadow(0px 0px 2px rgba(77, 4, 4, 0.54));
+      -webkit-filter: drop-shadow(2px 2px 0px #000000)
+        drop-shadow(0px 0px 2px rgba(77, 4, 4, 0.54));
+    }
+  }
+  @include maxWidth(md) {
+    flex-direction: column;
+    gap: 0.25rem;
+    .ads {
+      width: 100%;
+    }
+  }
+}
+
+.bottom-nav {
+  // overflow: hidden;
+  border-radius: 3px;
+  background-image: linear-gradient(0deg, #be9d3f 0%, #d3b14e 100%);
+  .nav-item {
+    .nav-link {
+      color: $white;
+      font-size: 15px !important;
+      padding: calc(8px + 8px) 12px;
+      &:hover,
+      &.active {
+        background-color: $main-color-dark;
+      }
+      .search {
+        font-size: 18px !important;
+      }
+    }
+    .drop-list {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 30px);
+      display: block;
+      width: fit-content;
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+      visibility: hidden;
+      overflow: hidden;
+      opacity: 0;
+      z-index: 111;
+      background-image: linear-gradient(0deg, #be9d3f 0%, #d3b14e 100%);
+      transition: $main-transition;
+      .list-item {
+        .link-item {
+          display: block;
+          color: $white;
+          padding: 10px 15px;
+          font-size: 15px;
+          border-bottom: 1px solid $main-color;
+          transition: $sm-transition;
+          &:hover {
+            background-color: $main-color-dark;
+          }
+        }
+        &.list-nested {
+          position: relative;
+          cursor: pointer;
+          .item-nested {
+            @include flex-between;
+            gap: 15px;
+            i,
+            svg {
+              font-size: 12px;
+              transition: $sm-transition;
+            }
+          }
+          .drop-nested {
+            right: 100%;
+          }
+          &:hover {
+            .drop-nested {
+              right: 100%;
+              top: -2px;
+              opacity: 1;
+              visibility: visible;
+            }
+            .item-nested {
+              i,
+              svg {
+                transform: rotate(90deg);
+              }
+            }
+          }
+        }
+      }
+      &.show {
+        top: calc(100% - 1px);
+        visibility: visible !important;
+        overflow: inherit;
+        opacity: 1 !important;
+      }
+      &.drop-search {
+        right: auto;
+        left: 0;
+        padding: 5px;
+        width: 300px;
+        border: none;
+        background-color: white;
+        box-shadow: 3px 3px 14px 0 #c7c2c2;
+        input {
+          width: 100%;
+          border-radius: 0;
+          margin-left: 4px;
+          &:focus {
+            box-shadow: none;
+            border-color: $main-color-dark;
+          }
+        }
+        .btn-search {
+          background-color: $main-color-dark;
+          color: $white;
+          padding: 10px;
+          transition: $main-transition;
+          &:hover {
+            background-color: #28bb94;
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          left: 13px;
+          top: -8px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 7px 8px 7px;
+          border-color: transparent transparent #ffffff transparent;
+        }
+      }
+    }
+    .dropdown {
+      .nav-link {
+        background-color: transparent;
+        &:hover, &:focus {
+          background-color: $main-color-dark;
+        }
+        &::after {
+          transition: $main-transition;
+        }
+        &[aria-expanded="true"] {
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}

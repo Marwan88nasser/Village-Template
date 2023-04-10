@@ -1,0 +1,32 @@
+body {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    background-color: $section-color;
+    color: $text-color;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    position: relative;
+    &>.layers-bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      width: 100%;
+      height: auto;
+    }
+    .content-page {
+      box-shadow: 0 0 13px 0 #00000028;
+    }
+}
+// All Rest
+* {
+    @include all-reset;
+}
+// a Reset
+a {
+    @include a-reset;
+}
+// reset btn
+button {
+    border: none;
+    outline: none;
+}
